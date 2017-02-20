@@ -88,13 +88,13 @@
         <div class="col-md-3">
           <div class="well well-sm">
              <div class="text-center"> 
-             <a class="aa-secondary-btn" href="<?php echo site_url()."/my-shortlisted-properties"?>">View Shortlist</a></div>
+             <a class="aa-secondary-btn" href="<?php echo site_url()."my-shortlisted-properties"?>">View Shortlist</a></div>
           </div>
           </div>
         <div class="col-md-3">
           <div class="well well-sm">
               <div class="text-center"> 
-              <a class="aa-secondary-btn" href="<?php echo site_url()."/my-properties"?>">View Added Properties</a></div>
+              <a class="aa-secondary-btn" href="<?php echo site_url()."my-properties"?>">View Added Properties</a></div>
           </div>
           </div>
       </div>
@@ -139,7 +139,7 @@
 			var currentPassword = $('#current_password').val();
 			var newPassword = $('#new_password').val();
 			$.ajax({
-				url: SITE_URL+"/change-password",
+				url: SITE_URL+"change-password",
 				type: 'POST',
 				data: {
 					'current_password':currentPassword,
@@ -164,7 +164,7 @@
 	
 	function updatePassword(newPassword){
 		$.ajax({
-				url: SITE_URL+"/update-password",
+				url: SITE_URL+"update-password",
 				type: 'POST',
 				data: {
 					'new_password':newPassword,

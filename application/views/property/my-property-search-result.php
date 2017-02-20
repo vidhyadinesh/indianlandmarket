@@ -3,7 +3,7 @@
 <?php foreach($properties as $prop):?>
 <li>
   <article class="aa-properties-item">
-    <a class="aa-properties-item-img" href="<?php echo site_url()."/property/view/".$prop['id']?>">
+    <a class="aa-properties-item-img" href="<?php echo site_url()."property/view/".$prop['id']?>">
     <?php if(!empty($prop['prop_image'])) {?>
       <img alt="img" src="<?php echo base_url()."uploads/".$prop['prop_image']['image']?>">
     <?php }else{ ?>
@@ -32,15 +32,15 @@
           Rs.<?php echo $prop['estimated_price']?>
         </span>
         <?php if($prop['purpose'] == 'paying guest'){?>
-        <a class="aa-secondary-btn" href="<?php echo site_url()."/pg/view/".$prop['id']?>">View Details</a>       
+        <a class="aa-secondary-btn" href="<?php echo site_url()."pg/view/".$prop['id']?>">View Details</a>       
         <?php }else{ ?>
-         <a class="aa-secondary-btn" href="<?php echo site_url()."/property/view/".$prop['id']?>">View Details</a>
+         <a class="aa-secondary-btn" href="<?php echo site_url()."property/view/".$prop['id']?>">View Details</a>
         <?php } ?>
 
         <?php if($prop['purpose'] == 'paying guest'){?>
-          <a class="aa-secondary-btn" href="<?php echo site_url()."/pg/edit/?id=".base64_encode($prop['id'])?>">Edit Details</a>
+          <a class="aa-secondary-btn" href="<?php echo site_url()."pg/edit/?id=".base64_encode($prop['id'])?>">Edit Details</a>
           <?php }else{?>
-           <a class="aa-secondary-btn" href="<?php echo site_url()."/postproperty/edit/step1/?id=".base64_encode($prop['id'])?>">Edit Details</a>
+           <a class="aa-secondary-btn" href="<?php echo site_url()."postproperty/edit/step1/?id=".base64_encode($prop['id'])?>">Edit Details</a>
          <?php }?>
      <!--<button class="aa-secondary-btn shortlist" style="margin-right:10px;padding-bottom:0;float:right" id="<?php /*?><?php echo $prop['id']?><?php */?>" value="<?php /*?><?php echo $loggedId ?><?php */?>">Add to Short list</button>--><!--<span class="glyphicon glyphicon-star"></span>-->
         
@@ -104,7 +104,7 @@
       $('#filter_category').on('change', function() {
           var categoryId = this.value;
           //alert(categoryId);die();
-          var url = SITE_URL+"/postproperty/subcategories";
+          var url = SITE_URL+"postproperty/subcategories";
           $.ajax({
               type: "POST",
               dataType: 'json',

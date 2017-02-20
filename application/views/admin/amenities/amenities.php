@@ -20,9 +20,9 @@
                                     <tr>
                                         <!--<td>01</td>-->
                                         <td><?php echo $amenity['amenities'] ?></td>
-                                        <td><a class="btn btn-xs btn-success" href="<?php echo site_url()."/amenity/edit/?id=".$amenity['id']?>">Edit</a></td>
+                                        <td><a class="btn btn-xs btn-success" href="<?php echo site_url()."amenity/edit/?id=".$amenity['id']?>">Edit</a></td>
                                         <td>
-                                        <a class="btn btn-xs btn-danger" href="<?php echo site_url()."/amenity/delete/?id=".$amenity['id']?>">Delete</a></td>
+                                        <a class="btn btn-xs btn-danger" href="<?php echo site_url()."amenity/delete/?id=".$amenity['id']?>">Delete</a></td>
                                         </td>
                                     </tr>
                                 <?php endforeach;?> 

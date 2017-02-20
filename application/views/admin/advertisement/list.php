@@ -285,7 +285,7 @@
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $adminname ?></div>
                     <div class="email"><?php echo $adminemail ?></div>
-                    <a href="<?php echo site_url()."/admin/logout" ?>" class="aa-register" style="border-right:none">Logout</a>
+                    <a href="<?php echo site_url()."admin/logout" ?>" class="aa-register" style="border-right:none">Logout</a>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
@@ -306,31 +306,31 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
-                        <a href="<?php echo site_url()."/admin/home"?>">
+                        <a href="<?php echo site_url()."admin/home"?>">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url()."/admin/users"?>">
+                        <a href="<?php echo site_url()."admin/users"?>">
                             <i class="material-icons">view_list</i>
                             <span>User List</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url()."/admin/pending-properties"?>">
+                        <a href="<?php echo site_url()."admin/pending-properties"?>">
                             <i class="material-icons">view_list</i>
                             <span>Pending Property List</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url()."/admin/properties"?>">
+                        <a href="<?php echo site_url()."admin/properties"?>">
                             <i class="material-icons">view_list</i>
                             <span>Property List</span>
                         </a>
                     </li>
                     <li class="active">
-                        <a href="<?php echo site_url()."/admin/advertisement/listing"?>">
+                        <a href="<?php echo site_url()."admin/advertisement/listing"?>">
                             <i class="material-icons">view_list</i>
                             <span>Advertisements</span>
                         </a>
@@ -342,13 +342,13 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="<?php echo site_url()."/admin/amenities"?>">Add Amenities</a>
+                                <a href="<?php echo site_url()."admin/amenities"?>">Add Amenities</a>
                             </li>
                             <li>
-                                <a href="<?php echo site_url()."/admin/features"?>">Add Features</a>
+                                <a href="<?php echo site_url()."admin/features"?>">Add Features</a>
                             </li>
                             <li>
-                                <a href="<?php echo site_url()."/admin/subcategories"?>">Add Subcategory</a>
+                                <a href="<?php echo site_url()."admin/subcategories"?>">Add Subcategory</a>
                             </li>                            
                         </ul>
                     </li>
@@ -538,7 +538,7 @@
                         </div>
                         <div class="body">
                          <!--<button type="button" class="btn btn-success waves-effect m-r-20" data-toggle="modal" data-target="#largeModal">ADD NEW</button>-->
-                         <a href="<?php echo site_url()."/admin/advertisement/add"?>" class="btn btn-success waves-effect m-r-20">Add</a>
+                         <a href="<?php echo site_url()."admin/advertisement/add"?>" class="btn btn-success waves-effect m-r-20">Add</a>
                        <!-- Large Size -->
                         <div class="modal fade" id="largeModal" tabindex="-1" role="dialog">
                             <div class="modal-dialog modal-lg" role="document">
@@ -636,8 +636,8 @@
                                         <td><?php echo $adv['position']?></td>
                                         <td><img src="<?php echo base_url()."uploads/advertisement/".$adv['image']?>" width="100" height="40" alt=""/></td>
                                         <th><code><?php echo $adv['link']?></code></th>
-                                        <td><a class="btn btn-xs btn-success" href="<?php echo site_url()."/advertisement/edit/?id=".$adv['id']?>">Edit</a></td>
-                                        <td><a class="btn btn-xs btn-danger" href="<?php echo site_url()."/advertisement/delete/?id=".$adv['id']?>">Delete</a></td>
+                                        <td><a class="btn btn-xs btn-success" href="<?php echo site_url()."advertisement/edit/?id=".$adv['id']?>">Edit</a></td>
+                                        <td><a class="btn btn-xs btn-danger" href="<?php echo site_url()."advertisement/delete/?id=".$adv['id']?>">Delete</a></td>
                                     </tr>
                                    <?php endforeach;?>  
                                 </tbody>
@@ -662,7 +662,7 @@
 	  $('#page').on('change', function() {
 		  var page = this.value;
 		  //alert(page);
-		  var url = SITE_URL+"/advertisement/getposition";
+		  var url = SITE_URL+"advertisement/getposition";
 		  $.ajax({
 			type: "POST",
 			dataType: 'json',
@@ -694,7 +694,7 @@
 			formData.append('link',$( '#link' ).val());
       		formData.append('image',fileupload.files[0]);
 			$.ajax({
-				url: SITE_URL+"/advertisement/add",
+				url: SITE_URL+"advertisement/add",
 				type: 'POST',
 				data: formData,
 				//dataType:"json",

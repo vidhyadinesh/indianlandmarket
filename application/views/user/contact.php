@@ -93,7 +93,7 @@
         
         submitHandler: function(form) {
 			$.ajax({
-				url: SITE_URL+"/contact/save",
+				url: SITE_URL+"contact/save",
 				type: 'POST',
 				data: {
 					'data':$(form).serialize()

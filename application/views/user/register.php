@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,7 +58,7 @@
                 <a class="aa-property-home" href="<?php echo site_url() ?>">Property Home</a>
                 <h4>Create your account and Stay with us</h4>
               </div>
-              <form id="contactform" action="<?php echo site_url()."/user/registration"?>" method="post">                                                 
+              <form id="contactform" action="<?php echo site_url()."user/registration"?>" method="post">                                                 
                 <div class="aa-single-field">
                   <label for="first_name">First Name <span class="required">*</span></label>
                   <input type="text" required aria-required="true" value="" name="first_name">
@@ -101,12 +100,12 @@
                 <div class="aa-single-field">
                   <label for="checkboxes-0">
                   <input type="checkbox" name="terms" id="checkboxes-0" value="">
-                  <small style="color: #000">By clicking below you agreeing to the <a href="<?php echo site_url()."/terms"?>">Terms and Conditions</a> of Indian Land Market</small> </label> 
+                  <small style="color: #000">By clicking below you agreeing to the <a href="<?php echo site_url()."terms"?>">Terms and Conditions</a> of Indian Land Market</small> </label> 
                 </div>
             
                 <div class="aa-single-submit">
                   <input type="submit" value="Create Account" name="submit">
-                  <p>Already registered ? <a href="<?php echo site_url()."/login" ?>">Login here</a></p>
+                  <p>Already registered ? <a href="<?php echo site_url()."login" ?>">Login here</a></p>
                   <a href="<?php echo site_url() ?>" style="position:absolute;top: 0;right: 0;" class="btn btn-sm btn-success"><i class="fa fa-close"></i></a>                    
                 </div>
               </form>
@@ -183,7 +182,7 @@ $( "#contactform" ).validate({
             required: true,
             email: true,
 			remote:{
-				url: SITE_URL+"/checkemailexist",
+				url: SITE_URL+"checkemailexist",
 				type: "post"
 				}
           	},

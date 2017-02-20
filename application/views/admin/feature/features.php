@@ -23,9 +23,9 @@
                                         <!--<td>01</td>-->
                                         <td><?php echo $feature['category'] ?></td>
                                         <td><?php echo $feature['feature'] ?></td>
-                                        <td><a class="btn btn-xs btn-success" href="<?php echo site_url()."/feature/edit/?id=".$feature['id']?>">Edit</a></td>
+                                        <td><a class="btn btn-xs btn-success" href="<?php echo site_url()."feature/edit/?id=".$feature['id']?>">Edit</a></td>
                                         <td>
-                                        <a class="btn btn-xs btn-danger" href="<?php echo site_url()."/feature/delete/?id=".$feature['id']?>">Delete</a></td>
+                                        <a class="btn btn-xs btn-danger" href="<?php echo site_url()."feature/delete/?id=".$feature['id']?>">Delete</a></td>
                                         </td>
                                     </tr>
                                 <?php endforeach;?> 

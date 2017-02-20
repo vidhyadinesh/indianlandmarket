@@ -48,7 +48,7 @@ var $mcontents = array();
 			$this->email->subject("Your profile registered successfully");
 
             $message = "<p>Welcome to Indian Land Market</p>";
-            $message .= "<p><a href='".site_url()."/login"."'>Click here </a>if you want to login,
+            $message .= "<p><a href='".site_url()."login"."'>Click here </a>if you want to login,
                         if not, then ignore</p>";
             $this->email->message($message);
 			
@@ -92,12 +92,14 @@ var $mcontents = array();
 				'country_code'=> $this->input->post('country_code')
 				);		
 				$this->usermodel->register($data);
-				//$verify = $this->sendVerificationEmail($toEmail,$verificationCode);
+			    $this->sendVerificationEmail($toEmail,$verificationCode);
 
 				//if($verify){
 					//$data['verification_msg'] = "Please verify your email address for further proceedings";
 					//$this->load->view('index.php', $data);
+
 				//}
+				$this->session->set_flashdata('message', 'Please verify your email address for further proceedings');
 				redirect(site_url());
             }
 		}
@@ -107,13 +109,14 @@ var $mcontents = array();
 	  $this->usermodel->sendVerificationEmail($toEmail,$verificationCode);
     }	
 	
-	public function verify($verificationText=NULL){  
+	public function verify(){  
+	  $verificationText = $this->input->get('code','');
 	  $noRecords = $this->usermodel->verifyEmailAddress($verificationText);  
 	  if ($noRecords > 0){
-	   $error = array( 'success' => "Email Verified Successfully!"); 
+	   $error = "Email Verified Successfully!"; 
 	   //add registration mail
 	  }else{
-	   $error = array( 'error' => "Sorry Unable to Verify Your Email!"); 
+	   $error = "Sorry Unable to Verify Your Email!"; 
 	  }
 	  $data['verification_msg'] = $error; 
 	  $this->load->view('index.php', $data);   
@@ -132,7 +135,13 @@ var $mcontents = array();
 			'loggedId'=> $userData->id,
 			);
 			$this->session->set_userdata($userDetails);
-			redirect(site_url());
+			//redirect(site_url());
+                        if($userData->status){
+				redirect('myaccount');
+			}else{
+				$msg = '<font color="#FF0000"> Please verify your Account. Check your registered email id before you login.</font>';
+				$this->loginview($msg);
+			}
 		}else{
 			$msg = '<font color="#FF0000"> Invalid username and password</font>';
 			$this->loginview($msg);
@@ -144,6 +153,10 @@ var $mcontents = array();
 
 	public function forgotPassword($msg=NULL){
 		$data['msg'] = $msg;
+		//$data['msg'] = $msg;
+		//$this->template->set_template('default');
+		//$this->template->write_view('content', 'user/recover', $data);
+        //$this->template->render();
 		$this->load->view('user/recover',$data);
 	}
 	
@@ -152,23 +165,25 @@ var $mcontents = array();
 			 if($this->usermodel->email_exists()){
 				$temp_pass = md5(uniqid()); 
             //send email with #temp_pass as a link
-				$this->load->library('email', array('mailtype'=>'html'));
-				$this->email->from('anushma.ideoder@gmail.com', "Site");
+				$this->load->library('email');
+				$this->email->set_mailtype("html");
+				$this->email->from('anushma@ideoder.com', "Indian Land Market");
 				$this->email->to($this->input->post('email'));
 				$this->email->subject("Reset your Password");
 
             $message = "<p>This email has been sent as a request to reset our password</p>";
-            $message .= "<p><a href='".base_url()."/home/reset_password/".$temp_pass."'>Click here </a>if you want to reset your password,
+            $message .= "<p><a href='".site_url()."resetpassword/?token=".$temp_pass."'>Click here </a>if you want to reset your password,
                         if not, then ignore</p>";
             $this->email->message($message);
 			
 			if($this->email->send()){
                 //$this->load->model('model_users');
                 if($this->usermodel->temp_reset_password($temp_pass)){
-
-                	$this->load->view('user/reset_email_msg');
-
-                    //echo "check your email for instructions, thank you";
+/*
+                    $this->template->set_template('default');
+					$this->template->write_view('content', 'user/reset-email-msg', $this->mcontents);
+        			$this->template->render();*/
+        			$this->load->view('user/reset-email-msg',$this->mcontents);
                 }
             }
             else{
@@ -184,9 +199,15 @@ var $mcontents = array();
 		}
 	}
 	
-	public function reset_password($temp_pass){
-		if($this->usermodel->is_temp_pass_valid($temp_pass)){
-			$this->load->view('user/reset_password',$temp_pass);
+	public function resetPassword(){
+		$token = $this->input->get('token','');
+		if($this->usermodel->is_temp_pass_valid($token)){
+			//$this->load->view('user/reset_password',$temp_pass);
+			$data['token'] = $token;
+			//$this->template->set_template('default');
+			//$this->template->write_view('content', 'user/reset-password', $data);
+        	//$this->template->render();
+        	$this->load->view('user/reset-password',$data);
 	
 		}else{
 			die("the key is not valid");    
@@ -194,22 +215,40 @@ var $mcontents = array();
 
 	}
 	
-	public function user_password_reset(){
+	public function userPasswordReset(){
 		if($this->input->post('submit')){
 			$this->usermodel->update_password();
-			//die('success');//redirect login 
-			$this->loginview();
+
+			//$this->template->set_template('default');
+			//$this->template->write_view('content', 'user/reset-msg', $this->mcontents);
+        	//$this->template->render();
+        	$this->load->view('user/reset-msg',$this->mcontents);
 		}
 	}	
+
+	public function emailExist(){
+		$email = $this->input->post('email');
+		$output = $this->usermodel->email_exists($email);
+		if($output){
+			echo "true";
+		}else{
+			echo "false";
+		}
+		
+	}
 	
 	public function getAccountDetails(){
+          if(!empty($this->session->userdata('loggedId'))){ 
 		$data['account'] = $this->usermodel->getUserDetails($this->session->userdata('loggedId'));
 		$this->load->model('advertisementmodel');
 		$data['advertisements'] = $this->advertisementmodel->getAdvertisementsByPage('myaccount');
 		$data['username'] = $this->session->userdata('name');		
 		$this->template->set_template('default');
 		$this->template->write_view('content', 'user/my-account', $data);
-        $this->template->render();
+                $this->template->render();
+         }else{
+	    	redirect('login');
+	    }
 	}
 	
 	public function changePassword(){
@@ -240,8 +279,8 @@ var $mcontents = array();
 	public function logout(){
 		$this->session->unset_userdata('name');
 		$this->session->unset_userdata('loggedId');
-		$this->session->sess_destroy();
-		redirect(site_url());
+		$this->session->sess_destroy();                
+		redirect(site_url(),'refresh');
 	}
 	
 	public function saveContact(){

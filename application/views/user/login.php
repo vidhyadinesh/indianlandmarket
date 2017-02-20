@@ -47,11 +47,11 @@
           <div class="aa-signin-area">
             <div class="aa-signin-form" style="position:relative;">
               <div class="aa-signin-form-title">
-                <a class="aa-property-home" href="index.php">Property Home</a>
+                <a class="aa-property-home" href="<?php echo base_url();?>">Property Home</a>
                 <h4>Log in to your account</h4>
               </div>
               
-              <form class="loginform" action="<?php echo site_url()."/user/login"?>" method="post">
+              <form class="loginform" action="<?php echo site_url()."user/login"?>" method="post">
               
               <?php if(!empty($msg)) echo $msg;?>                                                 
                 <div class="aa-single-field">
@@ -64,8 +64,8 @@
                 </div>                
                 <div class="aa-single-submit">
                   <input type="submit" value="Login" class="aa-browse-btn" name="submit">  
-                  <p>Don't Have A Account Yet? <a href="<?php echo site_url()."/register-us" ?>">CREATE NOW!</a></p>
-                  <p><a href="<?php echo site_url()."/forgot-password" ?>">Forgot Password?</a></p>
+                  <p>Don't Have A Account Yet? <a href="<?php echo site_url()."register-us" ?>">CREATE NOW!</a></p>
+                  <p><a href="<?php echo site_url()."forgot-password" ?>">Forgot Password?</a></p>
                   <a href="<?php echo site_url() ?>" style="position:absolute;top: 0;right: 0;" class="btn btn-sm btn-success"><i class="fa fa-close"></i></a> 
                 </div>
               </form>

@@ -397,7 +397,7 @@
 	  }*/
 	  var querystring = 'purpose='+purpose+'&category='+category+'&subcategory='+subcategory+'&country='+country+'&from_price='+from_price+'&to_price='+to_price+'&location='+location+'&from_sqft='+from_sqft+'&to_sqft='+to_sqft+'';
 
-	   window.location.href= SITE_URL+'/properties/?'+querystring;
+	   window.location.href= SITE_URL+'properties/?'+querystring;
 	   
    }
   

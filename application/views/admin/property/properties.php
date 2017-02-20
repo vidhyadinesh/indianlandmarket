@@ -28,7 +28,7 @@
                                 <?php foreach($properties as $key => $prop):?>
                                     <tr>                                    
                                         <?php /*?><td><?php echo ++$counter?></td><?php */?>
-                                        <td><?php echo $prop['title']?><br><!--<a href="#">Edit</a> |--> <a href="<?php echo site_url()."/property/view/".$prop['id']?>">View</a></td>
+                                        <td><?php echo $prop['title']?><br><!--<a href="#">Edit</a> |--> <a href="<?php echo site_url()."property/view/".$prop['id']?>">View</a></td>
                                         <td><?php echo $prop['category_name']?></td>
                                         <th><?php echo $prop['sub_category_name']?></th>
                                         <td><?php if($prop['status'] == 0){?>Not approved <?php }else{?>Approved <?php }?></a></td>
@@ -75,7 +75,7 @@
 	$('.changeStatus').on('click', function() {
 		//alert('dsfs');
 		 var propertyId = $(this).attr('id');
-		 var url = SITE_URL+"/admin/property/change-status";
+		 var url = SITE_URL+"admin/property/change-status";
 		$.ajax({
 			type: "POST",
 			//dataType: 'json',
@@ -95,7 +95,7 @@
 	
 	$('.delete').on('click', function() {
 		 var propertyId = $(this).attr('id');
-		 var url = SITE_URL+"/admin/property/delete";
+		 var url = SITE_URL+"admin/property/delete";
 		$.ajax({
 			type: "POST",
 			//dataType: 'json',

@@ -563,7 +563,7 @@
       
       var querystring = 'category='+category+'&location='+location+'&availableFor='+availableFor+'&suitableFor='+suitableFor+'&furnishinglevel='+furnishinglevel+'&bedrooms='+bedrooms+'&lat='+lat+'&lng='+lng+'&features='+pgFeatures+'';
 
-     window.location.href= SITE_URL+'/paying-guest-properties/?'+querystring;
+     window.location.href= SITE_URL+'paying-guest-properties/?'+querystring;
        }
      });
 
@@ -590,7 +590,7 @@
 	  
 	  //var sortField = this.value;
 			 //alert(sortField);
-		var url = SITE_URL+"/property/pglist/"+''+offset;
+		var url = SITE_URL+"property/pglist/"+''+offset;
 		$.ajax({
 			type: "POST",
 			//dataType: 'json',
@@ -637,7 +637,7 @@
 
 	   var querystring = 'category='+category+'&availableFor='+availableFor+'&suitableFor='+suitableFor+'&from_price='+from_price+'&to_price='+to_price+'&from_sqft='+from_sqft+'&to_sqft='+to_sqft+'';
 
-     window.location.href= SITE_URL+'/paying-guest-properties/?'+querystring;
+     window.location.href= SITE_URL+'paying-guest-properties/?'+querystring;
 	   
    }
   

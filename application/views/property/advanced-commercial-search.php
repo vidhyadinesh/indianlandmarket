@@ -168,7 +168,7 @@
 	  }*/
 	  var querystring = 'purpose='+purpose+'&category='+category+'&country='+country+'&state='+state+'&district='+district+'&from_price='+from_price+'&to_price='+to_price+'&location='+location+'&from_sqft='+from_sqft+'&to_sqft='+to_sqft+'&type='+type+'&workstations='+workstations+'&meeting_rooms='+meeting_rooms+'';	  
 
-	   window.location.href= SITE_URL+'/properties/?'+querystring;
+	   window.location.href= SITE_URL+'properties/?'+querystring;
 	   
    }
   </script>

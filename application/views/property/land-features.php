@@ -1,4 +1,3 @@
-
 <form class="form-horizontal" id="land_features" method="post">
 <input type="hidden" name="property_id" value="<?php echo $propertyId ?>" id="property_id">
 <div class="form-group form-group-sm">
@@ -155,7 +154,7 @@ $("#land_features").validate({
 			});
 
 			$.ajax({
-				url: SITE_URL+"/postproperty/step3",
+				url: SITE_URL+"postproperty/step3",
 				type: 'POST',
 				data: {
 					'data':$(form).serialize(),

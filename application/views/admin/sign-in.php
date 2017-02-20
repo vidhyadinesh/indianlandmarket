@@ -33,7 +33,7 @@
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="post" action="<?php echo site_url()."/admin/login"?>">
+                <form id="sign_in" method="post" action="<?php echo site_url()."admin/login"?>">
                     <div class="msg">Sign in to start your session</div>                    
                     <?php if(!empty($msg)) echo $msg;?>       
                     <div class="input-group">

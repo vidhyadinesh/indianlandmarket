@@ -97,6 +97,7 @@
     <?php echo $verification_msg?>
     </div>
    <?php }?>
+  <div class="error"> <?php echo $this->session->flashdata('message');?> </div>
   <section id="aa-advance-search">
     <div class="container">
       <div class=" col-md-8 col-md-offset-2">
@@ -969,7 +970,7 @@
                       <span class="fa fa-home"></span>
                     </div>
                     <div class="aa-single-service-content">
-                      <h4><a href="<?php echo site_url()."/post-property" ?>">List Your Property</a></h4>
+                      <h4><a href="<?php echo site_url()."post-property" ?>">List Your Property</a></h4>
                       <p>Add your properties to sell or rent out as per its category and sub category.</p>
                     </div>
                   </div>
@@ -980,7 +981,7 @@
                       <span class="fa fa-check"></span>
                     </div>
                     <div class="aa-single-service-content">
-                      <h4><a href="<?php echo site_url()."/properties?purpose=sell"?>">Find prospective byers</a></h4>
+                      <h4><a href="<?php echo site_url()."properties?purpose=sell"?>">Find prospective byers</a></h4>
                       <p>Find prospective buyers around the world and showcase the best in your properties.</p>
                     </div>
                   </div>
@@ -1004,7 +1005,7 @@
                       <span class="fa fa-home"></span>
                     </div>
                     <div class="aa-single-service-content">
-                      <h4><a href="<?php echo site_url()."/properties" ?>">Choose your dream property</a></h4>
+                      <h4><a href="<?php echo site_url()."properties" ?>">Choose your dream property</a></h4>
                       <p>Choose from the wide range of properties across the globe.</p>
                     </div>
                   </div>
@@ -1015,7 +1016,7 @@
                       <span class="fa fa-check"></span>
                     </div>
                     <div class="aa-single-service-content">
-                      <h4><a href="<?php echo site_url()."/properties?purpose=sell"?>">Buy</a> /<a href="<?php echo site_url()."/properties?purpose=rent/lease"?>"> Rent </a>/<a href="<?php echo site_url()."/paying-guest-properties"?>"> PG listing</a></h4>
+                      <h4><a href="<?php echo site_url()."properties?purpose=sell"?>">Buy</a> /<a href="<?php echo site_url()."properties?purpose=rent/lease"?>"> Rent </a>/<a href="<?php echo site_url()."paying-guest-properties"?>"> PG listing</a></h4>
                       <p>Option to find properties to Buy or rent. Special zone for PG listing.</p>
                     </div>
                   </div>
@@ -1038,7 +1039,7 @@
               <span></span>
               <p>Kerala is indeed the best choice for all NRI living in US, Europe, Canada and Middle East for doing their real estate business. Real estate is one of the fastest growing sectors which always attract the NRIs. Whenever an NRI plans to engage or invest in real estate in Kerala, make sure that he goes through proper channels. This is to ensure the authenticity of the land. Also the NRI can go through certain real estate websites so that he could obtain all the necessary details regarding the property viz. flats, homes, villas and apartments. </p>
             </div>
-             <div class="text-center"><a class="aa-primary-btn " href="<?php echo site_url()."/tips"?>" style="color: #009206;">More Tips</a></div>
+             <div class="text-center"><a class="aa-primary-btn " href="<?php echo site_url()."tips"?>" style="color: #009206;">More Tips</a></div>
           </div>
         </div>
       </div>
@@ -1151,7 +1152,7 @@
 			
 			var querystring = 'purpose='+purpose+'&category='+category+'&location='+location+'&mr='+master_rooms+'&ab='+attached_bathrooms+'&ft='+floor_type+'&r='+radius+'&lat='+lat+'&lng='+lng+'&features='+homeFeatures+'';
 
-	   window.location.href= SITE_URL+'/properties/?'+querystring;
+	   window.location.href= SITE_URL+'properties/?'+querystring;
 		   }
 	   });
 	  
@@ -1178,7 +1179,7 @@
 			
 			var querystring = 'purpose='+purpose+'&category='+category+'&location='+location+'&landtype='+land_type+'&landpos='+land_position+'&water_availability='+water_availability+'&r='+radius+'&lat='+lat+'&lng='+lng+'&features='+landFeatures+'';
 
-	   window.location.href= SITE_URL+'/properties/?'+querystring;
+	   window.location.href= SITE_URL+'properties/?'+querystring;
 	   
 		   }
 	   });
@@ -1205,7 +1206,7 @@
 			
 			var querystring = 'purpose='+purpose+'&category='+category+'&location='+location+'&floorno='+floorno+'&towerno='+towerno+'&guest_rooms='+guest_rooms+'&r='+radius+'&lat='+lat+'&lng='+lng+'&features='+projectFeatures+'';
 
-	   		window.location.href= SITE_URL+'/properties/?'+querystring;
+	   		window.location.href= SITE_URL+'properties/?'+querystring;
 		   }
 	   });
 	   
@@ -1231,7 +1232,7 @@
 			
 			var querystring = 'purpose='+purpose+'&category='+category+'&location='+location+'&type='+type+'&workstations='+workstations+'&meeting_rooms='+meeting_rooms+'&r='+radius+'&lat='+lat+'&lng='+lng+'&features='+commercialFeatures+'';
 
-	   		window.location.href= SITE_URL+'/properties/?'+querystring;
+	   		window.location.href= SITE_URL+'properties/?'+querystring;
 		   }
 	   });
 	   

@@ -24,7 +24,7 @@ class Property extends CI_controller{
 		$config['first_link'] = 'First';
 		$config['last_link'] = 'Last';
 		$config['uri_segment'] = 4;
-		$config['base_url']= base_url().'index.php/admin/property/listing'; 
+		$config['base_url']= base_url().'admin/property/listing'; 
 		//$config['suffix'] = '?'.http_build_query($_GET, '', "&"); 
 		$this->pagination->initialize($config);
 		$this->data['paginglinks'] = $this->pagination->create_links();
@@ -76,10 +76,11 @@ class Property extends CI_controller{
 	
 	public function changeStatus(){
 		$propertyId = $this->input->post('property_id');
-		if($propertyId){			
+		if($propertyId){	
+			$userdata = $this->propertymodel->getUserDetailsByPropId($propertyId);		
 			$this->propertymodel->updateStatus($propertyId);
 			$this->load->model('usermodel');
-			$this->usermodel->sendapprovedmail();
+			$this->usermodel->sendapprovedmail($userdata);
 		}
 	}
 	
@@ -106,7 +107,7 @@ class Property extends CI_controller{
 		$config['first_link'] = 'First';
 		$config['last_link'] = 'Last';
 		$config['uri_segment'] = 4;
-		$config['base_url']= base_url().'index.php/admin/property/pendinglist'; 
+		$config['base_url']= base_url().'admin/property/pendinglist'; 
 		//$config['suffix'] = '?'.http_build_query($_GET, '', "&"); 
 		$this->pagination->initialize($config);
 		$this->data['paginglinks'] = $this->pagination->create_links();

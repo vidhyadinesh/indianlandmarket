@@ -84,7 +84,7 @@
                   <label class="radio-inline"><input type="radio" name="purpose" value="rent/lease" <?php if(!empty($details['purpose'])&& $details['purpose'] == 'rent/lease') {?> checked= checked <?php } ?>>Rent / Lease Out</label>
                   <?php /*?><label class="radio-inline"><input type="radio" name="purpose" value="paying guest" <?php if(!empty($details['purpose'])&& $details['purpose'] == 'paying guest') {?> checked= checked <?php } ?>>Paying guest</label><?php */?>
                   <?php if(!isset($propertyId)){ ?>
-                   &nbsp; <a href="<?php echo site_url()."/add-pg"?>" class="btn btn-success btn-xs" >List Your PG Here!</a>
+                   &nbsp; <a href="<?php echo site_url()."add-pg"?>" class="btn btn-success btn-xs" >List Your PG Here!</a>
                   <?php } ?>
                 </div>
               </div>               
@@ -209,7 +209,7 @@
 	  var SITE_URL = "<?php echo site_url();?>";
 	  $('#category').on('change', function() {
 		var categoryId = this.value;
-		var url = SITE_URL+"/postproperty/subcategories";
+		var url = SITE_URL+"postproperty/subcategories";
 		$.ajax({
 	    type: "POST",
 		dataType: 'json',
@@ -233,7 +233,7 @@
 		 $('#subCategory').on('change', function() {
 			 var subCategoryId = this.value;
 		 
-			 var url = SITE_URL+"/postproperty/get-subcategorytype";
+			 var url = SITE_URL+"postproperty/get-subcategorytype";
 			$.ajax({
 				type: "POST",
 				dataType: 'json',
@@ -278,7 +278,7 @@
         
         submitHandler: function(form) {
 			$.ajax({
-				url: SITE_URL+"/postproperty/step1",
+				url: SITE_URL+"postproperty/step1",
 				type: 'POST',
 				data: {
 					'data':$(form).serialize()

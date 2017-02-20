@@ -133,7 +133,7 @@ $("#add_prop_step2").validate({
         
         submitHandler: function(form) {
 			$.ajax({
-				url: SITE_URL+"/postproperty/step2",
+				url: SITE_URL+"postproperty/step2",
 				type: 'POST',
 				data: {
 					//'data':$(form).serialize()
@@ -155,7 +155,7 @@ $("#add_prop_step2").validate({
 	$("#previous").on('click',function (e) { 
         var propId = $( '#property_id' ).val();
         $.ajax({
-        url: SITE_URL+"/postproperty/edit/step1",
+        url: SITE_URL+"postproperty/edit/step1",
         type: 'POST',
         data: {
           'property_id':propId
@@ -184,7 +184,8 @@ $("#add_prop_step2").validate({
 		var lat = "<?php echo isset($prop_locations['latitude']) ? $prop_locations['latitude']:44.88623409320778 ?>",
              lng = "<?php echo isset($prop_locations['longitude']) ? $prop_locations['longitude']:-87.86480712897173 ?>",
              latlng = new google.maps.LatLng(lat, lng),
-             image = 'http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png';
+             //image = 'http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png';
+             image = '<?php echo base_url();?>assets/img/mappin_25x25.png';
 			 //alert(lat);
          //zoomControl: true,
          //zoomControlOptions: google.maps.ZoomControlStyle.LARGE,

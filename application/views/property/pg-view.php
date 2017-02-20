@@ -1,4 +1,3 @@
-
   <!-- Start Property header  -->
 
   <section id="aa-property-header">
@@ -250,7 +249,7 @@
                  <?php foreach($nearbyprops as $prop):?>
                    <div class="col-md-6">
                      <article class="aa-properties-item">
-                        <a class="aa-properties-item-img" href="<?php echo site_url()."/property/view/".$prop['id']?>">
+                        <a class="aa-properties-item-img" href="<?php echo site_url()."property/view/".$prop['id']?>">
                         <?php if($prop['nearby_prop_image']){?>
                           <img alt="img" src="<?php echo base_url()."uploads/".$prop['nearby_prop_image']['image']?>">
                         <?php }else{?>  
@@ -273,7 +272,7 @@
                             <span class="aa-price">
                               $ <?php echo isset($prop['estimated_price'])? $prop['estimated_price']:'' ?>
                             </span>
-                            <a class="aa-secondary-btn" href="<?php echo site_url()."/property/view/".$prop['id']?>">View Details</a>
+                            <a class="aa-secondary-btn" href="<?php echo site_url()."property/view/".$prop['id']?>">View Details</a>
                           </div>
                         </div>
                       </article>
@@ -546,7 +545,7 @@
      $('#filter_category').on('change', function() {
     var categoryId = this.value;
     //alert(categoryId);die();
-    var url = SITE_URL+"/postproperty/subcategories";
+    var url = SITE_URL+"postproperty/subcategories";
     $.ajax({
       type: "POST",
     dataType: 'json',
@@ -607,7 +606,7 @@
 			'property_id': propertyId,
 			'user_id':loggedUserId
 			},
-		   url: SITE_URL+"/property/add-to-shortlist",
+		   url: SITE_URL+"property/add-to-shortlist",
 		   success: function(response){
 			   //console.log(response);
 			   alert(response);					   
@@ -630,7 +629,7 @@
 
      var querystring = 'category='+category+'&availableFor='+availableFor+'&suitableFor='+suitableFor+'&from_price='+from_price+'&to_price='+to_price+'&from_sqft='+from_sqft+'&to_sqft='+to_sqft+'';
 
-     window.location.href= SITE_URL+'/paying-guest-properties/?'+querystring;
+     window.location.href= SITE_URL+'paying-guest-properties/?'+querystring;
      
    }
   

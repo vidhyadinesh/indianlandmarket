@@ -317,7 +317,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url()."/admin/pending-properties"?>">
+                        <a href="<?php echo site_url()."admin/pending-properties"?>">
                             <i class="material-icons">view_list</i>
                             <span>Pending Property List</span>
                         </a>
@@ -534,7 +534,7 @@
                         </div>
                         <div class="body">
                        <!-- Large Size -->
-                                   <form class="form-horizontal" id="add_amenity" method="post" action="<?php echo site_url()."/amenity/save"?>">
+                                   <form class="form-horizontal" id="add_amenity" method="post" action="<?php echo site_url()."amenity/save"?>">
                                     <div>
                                       <div class="row">
       

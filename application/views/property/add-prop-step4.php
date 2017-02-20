@@ -143,7 +143,7 @@ $("#add_prop_step4").validate({
 			
 			if(valid){
 			$.ajax({
-				url: SITE_URL+"/postproperty/step4",
+				url: SITE_URL+"postproperty/step4",
 				type: 'POST',
 				data: {
 					//'data':$(form).serialize(),
@@ -168,7 +168,7 @@ $("#add_prop_step4").validate({
         //alert('dfd');
         var propId = $( '#property_id' ).val();
         $.ajax({
-        url: SITE_URL+"/postproperty/edit/step3",
+        url: SITE_URL+"postproperty/edit/step3",
         type: 'POST',
         data: {
           'property_id':propId

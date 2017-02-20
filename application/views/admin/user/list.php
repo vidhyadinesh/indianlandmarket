@@ -278,7 +278,7 @@
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $adminname ?></div>
                     <div class="email"><?php echo $adminemail ?></div>
-                    <a href="<?php echo site_url()."/admin/logout" ?>" class="aa-register" style="border-right:none">Logout</a>
+                    <a href="<?php echo site_url()."admin/logout" ?>" class="aa-register" style="border-right:none">Logout</a>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
@@ -299,31 +299,31 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
-                        <a href="<?php echo site_url()."/admin/home"?>">
+                        <a href="<?php echo site_url()."admin/home"?>">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
                     </li>
                     <li class="active">
-                        <a href="<?php echo site_url()."/admin/users"?>">
+                        <a href="<?php echo site_url()."admin/users"?>">
                             <i class="material-icons">view_list</i>
                             <span>User List</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url()."/admin/pending-properties"?>">
+                        <a href="<?php echo site_url()."admin/pending-properties"?>">
                             <i class="material-icons">view_list</i>
                             <span>Pending Property List</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url()."/admin/properties"?>">
+                        <a href="<?php echo site_url()."admin/properties"?>">
                             <i class="material-icons">view_list</i>
                             <span>Property List</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url()."/admin/advertisement/listing"?>">
+                        <a href="<?php echo site_url()."admin/advertisement/listing"?>">
                             <i class="material-icons">view_list</i>
                             <span>Advertisements</span>
                         </a>
@@ -335,13 +335,13 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="<?php echo site_url()."/admin/amenities"?>">Add Amenities</a>
+                                <a href="<?php echo site_url()."admin/amenities"?>">Add Amenities</a>
                             </li>
                             <li>
-                                <a href="<?php echo site_url()."/admin/features"?>">Add Features</a>
+                                <a href="<?php echo site_url()."admin/features"?>">Add Features</a>
                             </li>
                             <li>
-                                <a href="<?php echo site_url()."/admin/subcategories"?>">Add Subcategory</a>
+                                <a href="<?php echo site_url()."admin/subcategories"?>">Add Subcategory</a>
                             </li>
                             
                         </ul>
@@ -580,7 +580,7 @@ $(document).ready(function () {
  getUserList();	
 $('.delete').on('click', function() {
 		 var userId = $(this).attr('id');//alert(userId);
-		 var url = SITE_URL+"/admin/user/delete";
+		 var url = SITE_URL+"admin/user/delete";
 		$.ajax({
 			type: "POST",
 			data: {
@@ -623,7 +623,7 @@ function getUserList(sortField,perpage){
 	  } */
 
 	    var SITE_URL = "<?php echo site_url();?>";
-		var url = SITE_URL+"/admin/user/listing/"+''+offset;
+		var url = SITE_URL+"admin/user/listing/"+''+offset;
 		$.ajax({
 			type: "POST",
 			//dataType: 'json',

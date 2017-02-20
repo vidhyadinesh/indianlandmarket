@@ -9,7 +9,7 @@
                 <div class="aa-header-left">
                   <div class="aa-telephone-no">
                     <span class="fa fa-phone"></span>
-                    1-900-523-3564
+                    +44 75986 79168
                   </div>
                   <div class="aa-email hidden-xs">
                     <span class="fa fa-envelope-o"></span> info@indianlandmarket.com
@@ -25,12 +25,12 @@
                   <a href="<?php echo site_url()."register-us" ?>" class="aa-register">Register</a>
                   <!--<a href="signin.php" class="aa-login">Login</a>-->
                   
-                  <a href="<?php echo site_url()."/login" ?>" class="aa-register" style="border-right:none">Login</a>
+                  <a href="<?php echo site_url()."login" ?>" class="aa-register" style="border-right:none">Login</a>
                   <?php }else{?>
-                  <a href="<?php echo site_url()."/logout" ?>" class="aa-register" style="border-right:none">Logout</a>
+                  <a href="<?php echo site_url()."logout" ?>" class="aa-register" style="border-right:none">Logout</a>
                   <?php }?>
                   <?php if(!empty($username)) {?>
-                  <a href="<?php echo site_url()."/myaccount" ?>" class="aa-register" style="border-right:none">My account</a><?php }?>
+                  <a href="<?php echo site_url()."myaccount" ?>" class="aa-register" style="border-right:none">My account</a><?php }?>
                   <!--<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">-->
     	  <!--<div class="modal-dialog">
 				<div class="loginmodal-container">
@@ -74,14 +74,14 @@
           </button>
           <!-- LOGO -->                                               
           <!-- Text based logo -->
-           <a class="navbar-brand aa-logo" href="<?php echo base_url().'index.php' ?>">Indian Land <span>Market</span></a>
+           <a class="navbar-brand aa-logo" href="<?php echo base_url(); ?>">Indian Land <span>Market</span></a>
            <!-- Image based logo -->
-           <!-- <a class="navbar-brand aa-logo-img" href="index.php"><img src="img/logo.png" alt="logo"></a> -->
+           <!-- <a class="navbar-brand aa-logo-img" href="<?php echo base_url(); ?>"><img src="img/logo.png" alt="logo"></a> -->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
              <li>
-              <a href="<?php echo site_url()."/properties?purpose=sell"?>">BUY</a>
+              <a href="<?php echo site_url()."properties?purpose=sell"?>">BUY</a>
               <!--<ul class="dropdown-menu" role="menu">                
                 <li><a href="properties.php">Property for sale</a></li>
                 <li><a href="properties.php">New homes for sale</a></li> 
@@ -91,15 +91,15 @@
               </ul>-->
             </li>
              <li>
-              <a href="<?php echo site_url()."/properties?purpose=rent/lease"?>">RENT</a>
+              <a href="<?php echo site_url()."properties?purpose=rent/lease"?>">RENT</a>
               <!--<ul class="dropdown-menu" role="menu">                
                 <li><a href="properties.php">Property to rent</a></li>
                 <li><a href="properties.php">Student property to rent</a></li>                                            
               </ul>-->
             </li> 
-            <li><a href="<?php echo site_url()."/paying-guest-properties"?>">PAYING GUESTS</a></li>                                        
+            <li><a href="<?php echo site_url()."paying-guest-properties"?>">PAYING GUESTS</a></li>                                        
             <li>
-              <a href="<?php echo site_url()."/properties?category=3"?>">PROJECTS</a>
+              <a href="<?php echo site_url()."properties?category=3"?>">PROJECTS</a>
               <!--<ul class="dropdown-menu" role="menu">                
                 <li><a href="properties.php">Sold house prices</a></li>
                 <li><a href="properties.php">Property valuation</a></li> 
@@ -108,13 +108,13 @@
               </ul>-->
             </li>
             <li>
-              <a href="<?php echo site_url()."/properties?category=4"?>">COMMERCIALS</a>
+              <a href="<?php echo site_url()."properties?category=4"?>">COMMERCIALS</a>
               <!--<ul class="dropdown-menu" role="menu">                
                 <li><a href="properties.php">Commercial property to let</a></li>
                 <li><a href="properties.php">Commercial property for sale</a></li>                                             
               </ul>-->
             </li>
-            <li><a href="<?php echo site_url()."/contact"?>">CONTACT</a></li> 
+            <li><a href="<?php echo site_url()."contact"?>">CONTACT</a></li> 
                      
           </ul>                            
         </div><!--/.nav-collapse -->       

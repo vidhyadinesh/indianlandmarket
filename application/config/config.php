@@ -23,7 +23,8 @@
 |
 */
 //$config['base_url'] = 'http://richinnovations.org/indianlandmarket/';
-$config['base_url'] = 'http://localhost/indianlandmarket/';
+//$config['base_url'] = 'http://localhost/php/indianlandmarket/';
+$config['base_url'] = 'http://indianlandmarket.com';
 
 /*
 |--------------------------------------------------------------------------

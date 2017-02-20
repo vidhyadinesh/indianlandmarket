@@ -1,4 +1,3 @@
-
               <!-- Form Name -->
              <form class="form-horizontal" id="home_features" method="post">
              
@@ -357,7 +356,7 @@ $("#home_features").validate({
 			});
 
 			$.ajax({
-				url: SITE_URL+"/postproperty/step3",
+				url: SITE_URL+"postproperty/step3",
 				type: 'POST',
 				data: {
 					'data':$(form).serialize(),

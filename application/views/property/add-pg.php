@@ -376,7 +376,7 @@
           
              <p><div class="checkbox col-md-12"><label for="checkboxes-0">
              <input type="checkbox" name="terms" id="checkboxes-0" value="" <?php if(isset($property_id)) {?> checked= checked <?php } ?>>
-             <small>By clicking below you agreeing to the <a href="<?php echo site_url()."/terms"?>">Terms and Conditions</a> of Indian Land Market</small> </label> </div>
+             <small>By clicking below you agreeing to the <a href="<?php echo site_url()."terms"?>">Terms and Conditions</a> of Indian Land Market</small> </label> </div>
              </p>
         </div>
 
@@ -529,7 +529,7 @@
 
 
 			$.ajax({
-				url: SITE_URL+"/save-pg",
+				url: SITE_URL+"save-pg",
 				type: 'POST',
 				data: formData,
         processData: false,
@@ -555,7 +555,7 @@
 				success: function(response) {
 					var encodedPropId = btoa(response);
           alert('You have successfully added pg list.');
-          location.href = "<?php echo site_url()?>/property/success/?id="+encodedPropId;  				
+          location.href = "<?php echo site_url()?>property/success/?id="+encodedPropId;  				
 				}            
         	});
         }
@@ -574,7 +574,7 @@
       data: {
       'pg_image_id': pgImageId,
       },
-       url: SITE_URL+"/pg-delete-image",
+       url: SITE_URL+"pg-delete-image",
        success: function(response){
          alert('image deleted successfully'); 
          window.location.reload();           

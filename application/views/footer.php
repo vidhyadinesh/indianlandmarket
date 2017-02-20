@@ -7,18 +7,18 @@
                 <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12">
                     <h4> Indian land market</h4>
                     <ul>
-                        <li> <a href="<?php echo site_url()."/about"?>"> About</a> </li>
-                        <li> <a href="<?php echo site_url()."/terms"?>"> Terms </a> </li>
-                        <li> <a href="<?php echo site_url()."/privacy"?>"> Privacy Policy </a> </li>
+                        <li> <a href="<?php echo site_url()."about"?>"> About</a> </li>
+                        <li> <a href="<?php echo site_url()."terms"?>"> Terms </a> </li>
+                        <li> <a href="<?php echo site_url()."privacy"?>"> Privacy Policy </a> </li>
                         
                     </ul>
                 </div>
                 <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12">
                     <h4> Resources </h4>
                     <ul>
-                        <li> <a href="<?php echo site_url()."/contact"?>"> Contact</a> </li>
+                        <li> <a href="<?php echo site_url()."contact"?>"> Contact</a> </li>
                         <li> <a href="http://blog.ideoder.com/category/indianlandmarket" target="_blank"> Blog </a> </li>
-                        <li> <a href="<?php echo site_url()."/tips"?>"> Tips </a> </li>
+                        <li> <a href="<?php echo site_url()."tips"?>"> Tips </a> </li>
                     </ul>
                 </div>
                 <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12">
@@ -57,11 +57,11 @@
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
               <div class="aa-footer-right">
-                <a href="<?php echo site_url()."/properties?purpose=sell"?>">Buy</a>
-                <a href="<?php echo site_url()."/properties?purpose=rent/lease"?>">Rent</a>
-                <a href="<?php echo site_url()."/paying-guest-properties"?>">PG list</a>
-                <a href="<?php echo site_url()."/properties?category=3"?>">Projects</a>
-                <a href="<?php echo site_url()."/properties?category=4"?>">Commercials</a>             
+                <a href="<?php echo site_url()."properties?purpose=sell"?>">Buy</a>
+                <a href="<?php echo site_url()."properties?purpose=rent/lease"?>">Rent</a>
+                <a href="<?php echo site_url()."paying-guest-properties"?>">PG list</a>
+                <a href="<?php echo site_url()."properties?category=3"?>">Projects</a>
+                <a href="<?php echo site_url()."properties?category=4"?>">Commercials</a>             
               </div>
             </div>            
           </div>

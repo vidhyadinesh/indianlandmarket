@@ -3,7 +3,7 @@
 <?php foreach($properties as $prop):?>
 <li>
   <article class="aa-properties-item">
-    <a class="aa-properties-item-img" href="<?php echo site_url()."/property/view/".$prop['id']?>">
+    <a class="aa-properties-item-img" href="<?php echo site_url()."property/view/".$prop['id']?>">
     <?php if(!empty($prop['prop_image'])) {?>
       <img alt="img" src="<?php echo base_url()."uploads/".$prop['prop_image']['image']?>">
     <?php }else{ ?>
@@ -22,7 +22,7 @@
         <span>1100 SQ FT</span>-->
       </div>
       <div class="aa-properties-about">
-        <h3><a href="<?php echo site_url()."/property/view/".$prop['id']?>"><?php echo $prop['title']?></a></h3>
+        <h3><a href="<?php echo site_url()."property/view/".$prop['id']?>"><?php echo $prop['title']?></a></h3>
         <p><?php echo $prop['description']?></p>
         <p>Sqft: <?php echo $prop['sqft']?></p>
       </div>
@@ -31,7 +31,7 @@
           Rs.<?php echo $prop['estimated_price']?>
         </span>
         
-        <a class="aa-secondary-btn" href="<?php echo site_url()."/property/view/".$prop['id']?>">View Details</a>
+        <a class="aa-secondary-btn" href="<?php echo site_url()."property/view/".$prop['id']?>">View Details</a>
      <button class="aa-secondary-btn shortlist" style="margin-right:10px;padding-bottom:0;float:right" id="<?php echo $prop['id']?>" value="<?php echo $loggedId ?>">Add to Short list</button><!--<span class="glyphicon glyphicon-star"></span>-->
         
       </div>
@@ -92,7 +92,7 @@ No results found
 	 $('#filter_category').on('change', function() {
     var categoryId = this.value;
     //alert(categoryId);die();
-    var url = SITE_URL+"/postproperty/subcategories";
+    var url = SITE_URL+"postproperty/subcategories";
     $.ajax({
       type: "POST",
     dataType: 'json',
@@ -189,7 +189,7 @@ No results found
 			'property_id': propertyId,
 			'user_id':loggedUserId
 			},
-		   url: SITE_URL+"/property/add-to-shortlist",
+		   url: SITE_URL+"property/add-to-shortlist",
 		   success: function(response){
 			   alert(response);					   
 			}				 

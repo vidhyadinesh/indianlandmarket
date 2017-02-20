@@ -47,11 +47,11 @@
           <div class="aa-signin-area">
             <div class="aa-signin-form" style="position:relative;">
               <div class="aa-signin-form-title">
-                <a class="aa-property-home" href="index.php">Indian Land Market</a>
+                <a class="aa-property-home" href="<?php echo base_url(); ?>">Indian Land Market</a>
                 <h4> Reset your password </h4>
               </div>
               <?php if(!empty($msg)) echo $msg;?> 
-              <form id="recoverform" action="<?php echo site_url()."/user/recoverPassword"?>" method="post">                                                 
+              <form id="forgot_password" action="<?php echo site_url()."reset-password"?>" method="post">                                                 
                 <div class="aa-single-field">
                   <label for="email">Enter your registered Email Id <span class="required">*</span></label>
                   <input type="email" required aria-required="true" value="" name="email">
@@ -72,7 +72,8 @@
   
   <!-- jQuery library -->
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-  <script src="<?php echo base_url()."assets/js/jquery.min.js"?>"></script>   
+  <script src="<?php echo base_url()."assets/js/jquery.min.js"?>"></script>     
+  <script src="<?php echo base_url()."assets/js/validate.js"?>"></script>   
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.js"></script>   
   <!-- slick slider -->
@@ -85,6 +86,31 @@
   <script type="text/javascript" src="<?php echo base_url()."assets/js/jquery.fancybox.pack.js"?>"></script>
   <!-- Custom js -->
   <script src="<?php echo base_url()."assets/js/custom.js"?>"></script> 
+  <script>
+  var SITE_URL = "<?php echo site_url();?>";
+  $("#forgot_password").validate({
+    rules: {
+            'email':{
+        required: true,
+        email: true,
+        remote:{
+          url: SITE_URL+"/email-exist",
+          type: "post"
+          }
+      }     
+           
+        },
+    messages: {
+            'email':{
+        required: "The Email is required!",
+        email: "Please enter a valid email address!",
+        remote: "The email entered does not exist"
+      }
+           
+        }        
+        
+    }); 
+  </script>
   
   </body>
 </html>

@@ -112,7 +112,7 @@ class User extends CI_controller{
 		$config['first_link'] = 'First';
 		$config['last_link'] = 'Last';
 		$config['uri_segment'] = 4;
-		$config['base_url']= base_url().'index.php/admin/user/listing'; 
+		$config['base_url']= base_url().'admin/user/listing'; 
 		//$config['suffix'] = '?'.http_build_query($_GET, '', "&"); 
 		$this->pagination->initialize($config);
 		$this->data['paginglinks'] = $this->pagination->create_links();

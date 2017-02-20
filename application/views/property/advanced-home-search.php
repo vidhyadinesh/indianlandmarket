@@ -1,4 +1,3 @@
-
   <!-- Start Property header  -->
 
   <section id="aa-property-header" style="min-height: 337px;">
@@ -235,7 +234,7 @@
 	  
 	  var querystring = 'purpose='+purpose+'&category='+category+'&country='+country+'&state='+state+'&district='+district+'&from_price='+from_price+'&to_price='+to_price+'&location='+location+'&from_sqft='+from_sqft+'&to_sqft='+to_sqft+'&mr='+master_rooms+'&kr='+kids_rooms+'&gr='+guest_rooms+'&r='+radius+'&lat='+lat+'&lng='+lng+'';	  
 
-	   window.location.href= SITE_URL+'/properties/?'+querystring;
+	   window.location.href= SITE_URL+'properties/?'+querystring;
 	   
    }
   </script>

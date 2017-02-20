@@ -317,7 +317,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url()."/admin/pending-properties"?>">
+                        <a href="<?php echo site_url()."admin/pending-properties"?>">
                             <i class="material-icons">view_list</i>
                             <span>Pending Property List</span>
                         </a>
@@ -618,7 +618,7 @@
 	  $('#page').on('change', function() {
 		  var page = this.value;
 		  //alert(page);
-		  var url = SITE_URL+"/advertisement/getposition";
+		  var url = SITE_URL+"advertisement/getposition";
 		  $.ajax({
 			type: "POST",
 			dataType: 'json',
@@ -650,7 +650,7 @@
 			formData.append('link',$( '#link' ).val());
       		formData.append('image',fileupload.files[0]);
 			$.ajax({
-				url: SITE_URL+"/advertisement/save",
+				url: SITE_URL+"advertisement/save",
 				type: 'POST',
 				data: formData,
 				//dataType:"json",
@@ -692,7 +692,7 @@
 			formData.append('link',$( '#advlink' ).val());
       		formData.append('image',fileupload.files[0]);
 			$.ajax({
-				url: SITE_URL+"/advertisement/save",
+				url: SITE_URL+"advertisement/save",
 				type: 'POST',
 				data: formData,
 				//dataType:"json",
@@ -702,7 +702,7 @@
 					//console.log(response);	
 
 					//alert('advertisement added');
-					location.href = '<?php echo site_url()."/admin/advertisement/listing"?>';			
+					location.href = '<?php echo site_url()."admin/advertisement/listing"?>';			
 				}            
         	});
         }

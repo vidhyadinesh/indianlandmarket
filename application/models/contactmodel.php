@@ -22,7 +22,7 @@ class contactmodel extends CI_model{
 	  $this->email->from('anushma.ideoder@gmail.com', "Admin Team");
 	  $this->email->to($email);  
 	  $this->email->subject($data['subject']);
-	  //$this->email->message("Dear User,\nPlease click on below URL or paste into your browser to verify your Email Address\n\n http://richinnovations.org/indianlandmarket/index.php/verifyemail/".$verificationText."\n"."\n\nThanks\nAdmin Team");
+	  //$this->email->message("Dear User,\nPlease click on below URL or paste into your browser to verify your Email Address\n\n http://richinnovations.org/indianlandmarket/verifyemail/".$verificationText."\n"."\n\nThanks\nAdmin Team");
 	  $this->email->message("Dear Admin,\n".$data['message']."\n"."\n\nThanks\n".$data['author']);
 	  $this->email->send();
 	}

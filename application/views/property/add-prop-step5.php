@@ -168,7 +168,7 @@
 			formData.append('floor_plans',floorPlanArr);
 				
 			$.ajax({
-				url: SITE_URL+"/postproperty/step5",
+				url: SITE_URL+"postproperty/step5",
 				type: 'POST',
 				data: formData,
 				//dataType:"json",
@@ -202,7 +202,7 @@ xhr: function(){
 					//console.log(response);	
 					var encodedPropId = btoa(response);
 					alert('You have successfully completed all steps.');
-					location.href = "<?php echo site_url()?>/property/success/?id="+encodedPropId;			
+					location.href = "<?php echo site_url()?>property/success/?id="+encodedPropId;			
 				}            
         	});
 		});
@@ -211,7 +211,7 @@ xhr: function(){
         //alert('dfd');
         var propId = $( '#property_id' ).val();
         $.ajax({
-        url: SITE_URL+"/postproperty/step3",
+        url: SITE_URL+"postproperty/step3",
         type: 'POST',
         data: {
           'property_id':propId
@@ -251,7 +251,7 @@ xhr: function(){
 			data: {
 			'id': propImageId
 			},
-		   url: SITE_URL+"/remove-prop-image",
+		   url: SITE_URL+"remove-prop-image",
 		   success: function(response){
 			  alert('removed successfully');
 			  $("#prop_image"+propImageId).html('deleted');
@@ -268,7 +268,7 @@ xhr: function(){
 			data: {
 			'id': floorImageId
 			},
-		   url: SITE_URL+"/remove-floor-image",
+		   url: SITE_URL+"/-floor-image",
 		   success: function(response){
 			  alert('removed successfully');
 			  $("#floor_image"+floorImageId).html('deleted');					   
@@ -282,7 +282,7 @@ xhr: function(){
 			data: {
 			'id': floorPlanId
 			},
-		   url: SITE_URL+"/remove-floor-plan",
+		   url: SITE_URL+"remove-floor-plan",
 		   success: function(response){
 			  alert('removed successfully');
 			  $("#floor_plan"+floorPlanId).html('deleted');				   

@@ -7,7 +7,7 @@
           <div class="aa-property-header-inner">
             <h2>Privacy Policy</h2>
             <ol class="breadcrumb">
-            <li><a href="index.php">HOME</a></li>            
+            <li><a href="<?php echo base_url();?>">HOME</a></li>            
             <li class="active">Privacy Policy</li>
             </ol>
           </div>

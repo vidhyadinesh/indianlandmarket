@@ -696,6 +696,14 @@ class propertymodel extends CI_model{
 		//echo $this->db->last_query();die();
 		return $query->result_array();
 	}
+
+
+	public function getUserDetailsByPropId($propertyId){
+		$query = $this->db->query("select u.* from property as p
+    	left join user as u on u.id = p.user_id  
+      	where p.id= '$propertyId'");
+	  return $query->row_array();
+	}
  
  
 }

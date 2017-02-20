@@ -23,9 +23,9 @@
                                         <!--<td>01</td>-->
                                         <td><?php echo $subcategory['category'] ?></td>
                                         <td><?php echo $subcategory['sub_category'] ?></td>
-                                        <td><a class="btn btn-xs btn-success" href="<?php echo site_url()."/subcategory/edit/?id=".$subcategory['id']?>">Edit</a></td>
+                                        <td><a class="btn btn-xs btn-success" href="<?php echo site_url()."subcategory/edit/?id=".$subcategory['id']?>">Edit</a></td>
                                         <td>
-                                        <a class="btn btn-xs btn-danger" href="<?php echo site_url()."/subcategory/delete/?id=".$subcategory['id']?>">Delete</a></td>
+                                        <a class="btn btn-xs btn-danger" href="<?php echo site_url()."subcategory/delete/?id=".$subcategory['id']?>">Delete</a></td>
                                         </td>
                                     </tr>
                                 <?php endforeach;?> 

@@ -97,7 +97,7 @@ $(document).ready(function () {
 	$("#previous").on('click',function (e) { 
         var propId = $( '#property_id' ).val();
         $.ajax({
-        url: SITE_URL+"/postproperty/step1",
+        url: SITE_URL+"postproperty/step1",
         type: 'POST',
         data: {
           'property_id':propId

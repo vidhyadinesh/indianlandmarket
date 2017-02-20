@@ -1,4 +1,3 @@
-
 <?php if(!empty($properties)){ ?>
 <ul class="aa-properties-nav aa-list-view">
 <?php foreach($properties as $prop):?>
@@ -23,7 +22,7 @@
                             <span>1100 SQ FT</span>-->
                           </div>
                           <div class="aa-properties-about">
-                            <h3><a href="<?php echo site_url()."/property/view/".$prop['id']?>"><?php echo $prop['title']?></a></h3>
+                            <h3><a href="<?php echo site_url()."property/view/".$prop['id']?>"><?php echo $prop['title']?></a></h3>
                             <p><?php echo $prop['description']?></p>
                             <p>Sqft: <?php echo $prop['sqft']?></p>
                           </div>
@@ -31,7 +30,7 @@
                             <span class="aa-price">
                               Rs. <?php echo $prop['estimated_price']?>
                             </span>
-                            <a class="aa-secondary-btn" href="<?php echo site_url()."/pg/view/".$prop['id']?>">View Details</a>
+                            <a class="aa-secondary-btn" href="<?php echo site_url()."pg/view/".$prop['id']?>">View Details</a>
                             <!--<a class="aa-secondary-btn" style="margin-right:10px" href="#">Remove From Short list</a>-->
                             <!-- <button class="aa-secondary-btn removeshortlist" style="margin-right:10px;padding-bottom:0;float:right" id="<?php echo $prop['id']?>" value="<?php echo $loggedId ?>">Remove From Short list</button> -->
                           </div>

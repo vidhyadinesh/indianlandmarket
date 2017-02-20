@@ -56,7 +56,8 @@ public function is_temp_pass_valid($temp_pass){
 
 public function update_password(){
 	$token = $this->input->post('token');
-	$data = array('password'=> $this->input->post('password'));
+	$data = array('password'=> md5($this->input->post('new_password'))
+);
 	if($data){
         $this->db->where('token', $token);
         $this->db->update('user', $data); 
@@ -111,7 +112,7 @@ public function update_password(){
 	
 	public function sendVerificationEmail($email,$verificationText){
   
-	  $config = Array(
+	 /* $config = Array(
 		 'protocol' => 'smtp',
 		 'smtp_host' => 'smtp.gmail.com',
 		 'smtp_port' => 465,
@@ -120,16 +121,27 @@ public function update_password(){
 		 'mailtype' => 'html',
 		 'charset' => 'iso-8859-1',
 		 'wordwrap' => TRUE
-	  );
+	  );*/
+
+	  	$this->load->library('email');
+		$this->email->set_mailtype("html");
+		$this->email->from('anushma@ideoder.com', "Indian Land Market");
+		$this->email->to($email);
+		$this->email->subject("Email Verification");
+
+	    $message = "<p>Welcome to Indian Land Market</p>";
+	    $message .= "THANK YOU FOR REGISTERING WITH INDIAN LAND MARKET.<br/><a href='".site_url()."/verify?code=".$verificationText."'>Click here</a> to verify your account and enjoy our service.<br/><p>It is better to have something than Nothing. <p><a href='#' target='_blank'>Facebook</a> | <a href='#' target='_blank'>Twitter</a><p> - Team Ideoder</p>";
+	    $this->email->message($message);
+	    $this->email->send();
 	  
 	  
-	  $this->load->library('email', $config);
+	  /*$this->load->library('email', $config);
 	  $this->email->set_newline("\r\n");
 	  $this->email->from('anushma.ideoder@gmail.com', "Admin Team");
 	  $this->email->to($email);  
 	  $this->email->subject("Email Verification");
-	  $this->email->message("Dear User,\nPlease click on below URL or paste into your browser to verify your Email Address\n\n http://richinnovations.org/indianlandmarket/index.php/verifyemail/".$verificationText."\n"."\n\nThanks\nAdmin Team");
-	  $this->email->send();
+	  $this->email->message("Dear User,\nPlease click on below URL or paste into your browser to verify your Email Address\n\n http://richinnovations.org/indianlandmarket/verifyemail/".$verificationText."\n"."\n\nThanks\nAdmin Team");
+	  $this->email->send();*/
   
  }
  
@@ -140,9 +152,9 @@ public function update_password(){
  }
  
  
- public function sendapprovedmail(){
+ public function sendapprovedmail($userdata){
   
-	  $config = Array(
+	  /*$config = Array(
 		 'protocol' => 'smtp',
 		 'smtp_host' => 'smtp.gmail.com',
 		 'smtp_port' => 465,
@@ -160,7 +172,18 @@ public function update_password(){
 	  $this->email->to($email);  
 	  $this->email->subject("Property approved");
 	  $this->email->message("Dear User,\nYour property hasbeen approved.\n"."\n\nThanks\nAdmin Team");
-	  $this->email->send();
+	  $this->email->send();*/
+
+	$this->load->library('email');
+	$this->email->set_mailtype("html");
+	$this->email->from('anushma@ideoder.com', "Indian Land Market");
+	$this->email->to($userdata['email']);
+	$this->email->subject("Property Approved");
+
+    $message = "<p>Property Approved</p>";
+    $message .= "Dear ".$userdata['first_name'].", Your property hasbeen approved.<br/> Thanks Admin.";
+    $this->email->message($message);
+    $this->email->send();
   
  }
 

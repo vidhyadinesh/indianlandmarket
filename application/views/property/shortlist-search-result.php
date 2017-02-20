@@ -34,9 +34,9 @@
 
 
                             <?php if($prop['purpose'] == 'paying guest'){?>
-                            <a class="aa-secondary-btn" href="<?php echo site_url()."/pg/view/".$prop['prop_id']?>">View Details</a>       
+                            <a class="aa-secondary-btn" href="<?php echo site_url()."pg/view/".$prop['prop_id']?>">View Details</a>       
                             <?php }else{ ?>
-                             <a class="aa-secondary-btn" href="<?php echo site_url()."/property/view/".$prop['prop_id']?>">View Details</a>
+                             <a class="aa-secondary-btn" href="<?php echo site_url()."property/view/".$prop['prop_id']?>">View Details</a>
                             <?php } ?>
 
                             <!--<a class="aa-secondary-btn" style="margin-right:10px" href="#">Remove From Short list</a>-->
@@ -78,7 +78,7 @@
       $('#filter_category').on('change', function() {
           var categoryId = this.value;
           //alert(categoryId);die();
-          var url = SITE_URL+"/postproperty/subcategories";
+          var url = SITE_URL+"postproperty/subcategories";
           $.ajax({
               type: "POST",
               dataType: 'json',

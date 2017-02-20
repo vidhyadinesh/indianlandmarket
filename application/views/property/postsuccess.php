@@ -40,7 +40,7 @@
                         <span>1100 SQ FT</span>-->
                       </div>
                       <div class="aa-properties-about">
-                        <h4><a href="<?php echo site_url()."/property/view/".$prop_detail['id']?>"><?php echo $prop_detail['title']?></a></h4>
+                        <h4><a href="<?php echo site_url()."property/view/".$prop_detail['id']?>"><?php echo $prop_detail['title']?></a></h4>
                         <p><?php echo $prop_detail['description']?></p>
                         <p><?php echo $prop_detail['address']?></p>                      
                       </div>
@@ -49,18 +49,18 @@
                           $ <?php echo $prop_detail['estimated_price']?>
                         </span>
                         <?php if($prop_detail['purpose'] == 'paying guest'){?>
-                        <a class="aa-secondary-btn" href="<?php echo site_url()."/pg/edit/?id=".base64_encode($prop_detail['id'])?>">Edit Details</a>
+                        <a class="aa-secondary-btn" href="<?php echo site_url()."pg/edit/?id=".base64_encode($prop_detail['id'])?>">Edit Details</a>
                         <?php }else{?>
-                         <a class="aa-secondary-btn" href="<?php echo site_url()."/postproperty/edit/step1/?id=".base64_encode($prop_detail['id'])?>">Edit Details</a>
+                         <a class="aa-secondary-btn" href="<?php echo site_url()."postproperty/edit/step1/?id=".base64_encode($prop_detail['id'])?>">Edit Details</a>
                          <?php }?>
 
                          <?php if($prop_detail['purpose'] == 'paying guest'){?>
-                        <a class="aa-secondary-btn" href="<?php echo site_url()."/pg/view/".$prop_detail['id']?>">View Details</a>
+                        <a class="aa-secondary-btn" href="<?php echo site_url()."pg/view/".$prop_detail['id']?>">View Details</a>
                         <?php }else{?>
-                         <a class="aa-secondary-btn" href="<?php echo site_url()."/property/view/".$prop_detail['id']?>">View Details</a>
+                         <a class="aa-secondary-btn" href="<?php echo site_url()."property/view/".$prop_detail['id']?>">View Details</a>
                          <?php }?>
 
-                         <a class="aa-secondary-btn" href="<?php echo site_url()."/my-properties"?>">View Added Properties</a></div
+                         <a class="aa-secondary-btn" href="<?php echo site_url()."my-properties"?>">View Added Properties</a></div
                         
                       </div>
                     </div>

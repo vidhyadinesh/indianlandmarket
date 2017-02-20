@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'indianpropertymarket';
+$db['default']['username'] = 'indianpropmarket';
+$db['default']['password'] = '$QH[=Xk1r48,';
+$db['default']['database'] = 'indianlandmarket';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

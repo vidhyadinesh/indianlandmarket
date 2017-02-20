@@ -408,7 +408,7 @@ var $mcontents = array();
         //print_r($advFeatures) ;
         $this->load->model('propfeaturemodel');
         $PropertyIds = $this->propfeaturemodel->getPropByFeatures($advFeatures);
-        $propIds =array();
+        $propIds = [];
         foreach($PropertyIds as $propId){
             $propIds[] = $propId['property_id'];
         }
@@ -481,7 +481,7 @@ var $mcontents = array();
 		$config['first_link'] = 'First';
 		$config['last_link'] = 'Last';
 		$config['uri_segment'] = 3;
-		$config['base_url']= base_url().'index.php/property/listing'; 
+		$config['base_url']= base_url().'property/listing'; 
 		//$config['suffix'] = '?'.http_build_query($_GET, '', "&"); 
 		$this->pagination->initialize($config);
 		$this->data['paginglinks'] = $this->pagination->create_links();
@@ -603,6 +603,11 @@ var $mcontents = array();
 
 
 		//$this->mcontents['search_file'] = $includefile;
+		$this->mcontents['home_features'] = $this->featuremodel->getAdvancedFeatures(1);
+		$this->mcontents['land_features'] = $this->featuremodel->getAdvancedFeatures(2);
+		$this->mcontents['project_features'] = $this->featuremodel->getAdvancedFeatures(3);
+		$this->mcontents['commercial_features'] = $this->featuremodel->getAdvancedFeatures(4);
+
 		
 		$this->load->model('advertisementmodel');
 		$this->mcontents['advertisements'] = $this->advertisementmodel->getAdvertisementsByPage('listing');
@@ -778,7 +783,7 @@ var $mcontents = array();
 		$config['first_link'] = 'First';
 		$config['last_link'] = 'Last';
 		$config['uri_segment'] = 3;
-		$config['base_url']= base_url().'index.php/property/shortlist'; 
+		$config['base_url']= base_url().'property/shortlist'; 
 		//$config['suffix'] = '?'.http_build_query($_GET, '', "&"); 
 		$this->pagination->initialize($config);
 		$this->data['paginglinks'] = $this->pagination->create_links();
@@ -848,7 +853,7 @@ var $mcontents = array();
 		$config['first_link'] = 'First';
 		$config['last_link'] = 'Last';
 		$config['uri_segment'] = 3;
-		$config['base_url']= base_url().'index.php/property/mylist'; 
+		$config['base_url']= base_url().'property/mylist'; 
 		//$config['suffix'] = '?'.http_build_query($_GET, '', "&"); 
 		$this->pagination->initialize($config);
 		$this->data['paginglinks'] = $this->pagination->create_links();
@@ -1141,7 +1146,7 @@ var $mcontents = array();
         
         $this->load->model('propfeaturemodel');
         $PropertyIds = $this->propfeaturemodel->getPropByFeatures($pgfeatures);
-        $propIds = array();
+        $propIds = [];
         foreach($PropertyIds as $propId){
             $propIds[] = $propId['property_id'];
         }
@@ -1160,7 +1165,7 @@ var $mcontents = array();
 		$config['first_link'] = 'First';
 		$config['last_link'] = 'Last';
 		$config['uri_segment'] = 3;
-		$config['base_url']= base_url().'index.php/property/pglist'; 
+		$config['base_url']= base_url().'property/pglist'; 
 		//$config['suffix'] = '?'.http_build_query($_GET, '', "&"); 
 		$this->pagination->initialize($config);
 		$this->data['paginglinks'] = $this->pagination->create_links();
