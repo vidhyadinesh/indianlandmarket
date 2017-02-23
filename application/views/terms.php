@@ -27,7 +27,7 @@
             <!-- Start properties content body -->
             <div class="aa-properties-content-body">
             <h3 class="aa-property-header-inner">Terms And Conditions</h3>
-            <p>Welcome to our IndianLandMarket dot com. just in case you still browse & use this IndianLandMarket dot com, you're agreeing to accommodates & be certain by the subsequent terms & conditions of use, that in conjunction with our privacy policy owner govern [IndianLandMarket ]'s relationship with you in reference to this IndianLandMarket dot com. Just in case you trouble any a part of these terms & conditions, don't use our IndianLandMarket dot com. <br>
+            <p>Hi  Welcome to our IndianLandMarket dot com. just in case you still browse & use this IndianLandMarket dot com, you're agreeing to accommodates & be certain by the subsequent terms & conditions of use, that in conjunction with our privacy policy owner govern [IndianLandMarket ]'s relationship with you in reference to this IndianLandMarket dot com. Just in case you trouble any a part of these terms & conditions, don't use our IndianLandMarket dot com. <br>
             <p>  The use of this IndianLandMarket dot com is subject to the subsequent terms of use: </p>
             
             <div class="list-styled">
